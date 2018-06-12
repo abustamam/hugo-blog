@@ -11,7 +11,7 @@
   HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-  command = "hugo version"
+  command = "yarn run build-preview"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.41"
