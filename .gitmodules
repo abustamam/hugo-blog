@@ -1,0 +1,6 @@
+[submodule "site/themes/hugo-lamp"]
+	path = site/themes/hugo-lamp
+	url = https://github.com/huyb1991/hugo-lamp
+[submodule "site/themes/hugo-strata-theme"]
+	path = site/themes/hugo-strata-theme
+	url = https://github.com/digitalcraftsman/hugo-strata-theme

@@ -13,7 +13,8 @@ import inject from "gulp-inject";
 import cssnano from "cssnano";
 
 const browserSync = BrowserSync.create();
-const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
+// const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
+const hugoBin = `/usr/local/bin/hugo`
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
 if (process.env.DEBUG) {
@@ -28,7 +29,7 @@ gulp.task("build-preview", ["css", "js", "cms-assets", "hugo-preview"]);
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
     .pipe(postcss([
-      cssImport({from: "./src/css/main.css"}),
+      cssImport({ from: "./src/css/main.css" }),
       cssnext(),
       cssnano(),
     ]))
@@ -59,7 +60,7 @@ gulp.task("svg", () => {
   const svgs = gulp
     .src("site/static/img/icons-*.svg")
     .pipe(svgmin())
-    .pipe(svgstore({inlineSvg: true}));
+    .pipe(svgstore({ inlineSvg: true }));
 
   function fileContents(filePath, file) {
     return file.contents.toString();
@@ -67,7 +68,7 @@ gulp.task("svg", () => {
 
   return gulp
     .src("site/layouts/partials/svg.html")
-    .pipe(inject(svgs, {transform: fileContents}))
+    .pipe(inject(svgs, { transform: fileContents }))
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
@@ -86,7 +87,7 @@ gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
 
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload("notify:false");
       cb();
