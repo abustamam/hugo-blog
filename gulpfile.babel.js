@@ -12,15 +12,15 @@ import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import cssnano from "cssnano";
 
-console.log("-----PLATFORM!!!", process.platform)
 
 const browserSync = BrowserSync.create();
-// const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
+const hugoBin1 = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
 const hugoBin = `/usr/local/bin/hugo`
 // const hugoBin = `./bin/hugo`
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
-cp.spawn(hugoBin, ["version"], { stdio: "inherit" })
+console.log("-----PLATFORM!!!", process.platform, hugoBin, hugoBin1)
+cp.spawn(hugoBin1, ["version"], { stdio: "inherit" })
 
 if (process.env.DEBUG) {
   defaultArgs.unshift("--debug")
