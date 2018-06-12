@@ -1,5 +1,5 @@
 [build]
-  command = "hugo version"
+  command = "yarn build"
   publish = "dist"
 [build.environment]
   YARN_VERSION = "1.3.2"
@@ -11,7 +11,7 @@
   HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-  command = "yarn build-preview"
+  command = "hugo version"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.41"
