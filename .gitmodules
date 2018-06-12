@@ -4,3 +4,9 @@
 [submodule "site/themes/hugo-strata-theme"]
 	path = site/themes/hugo-strata-theme
 	url = https://github.com/digitalcraftsman/hugo-strata-theme
+[submodule "site/themes/themes/minimo"]
+	path = site/themes/themes/minimo
+	url = https://github.com/MunifTanjim/minimo
+[submodule "site/themes/minimo"]
+	path = site/themes/minimo
+	url = https://github.com/MunifTanjim/minimo

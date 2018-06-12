@@ -1,145 +1,269 @@
-baseurl = "/"
-languageCode = "en-us"
+baseURL = "/"
 title = "Bustamam Technology"
-theme = "hugo-strata-theme"
-# disqusShortname = "spf13"
-# Enable Google Analytics by inserting your tracking code
+# for smart copyright line, leave this blank and check [params.copyright]
+copyright = ""
+
+theme = "minimo"
+
+disqusShortname = ""
 googleAnalytics = ""
-# Define how many posts should appear on a site
-paginate = 9
 
-[params]
-	# To provide some metadata for search engines feel free to add a few
-    # information about you and your website.
-	name = "Rasheed Bustamam"
-	description = "Cool website"
+Paginate = 5
+preserveTaxonomyNames = true
 
-	# Format dates with Go's time formatting
-	date_format = "2006-01-02"
+enableRobotsTXT = true # generate robots.txt
 
-	# Add read time estimates in the format "X min read"
-	show_read_time = false
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
 
-	# Add custom assets with their paths relative to the static folder
-	custom_js   = []
-	custom_css  = []
+enableEmoji = true
 
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
 
-	[params.sidebar]
-		# Replace the avatar with a picture of your own under static/images
-		avatar = "avatar.jpg"
-		# Use Markdown to format the string. This works nearly all over the theme
-		bio = "**I'm Rasheed**, a blogger, educator"
-		# The icons will be shown if you enter your username
-		twitter = "rbustamam"
-		github = "abustamam"
-		# gitlab = "spf13"
-		dribbble = ""
-		facebook = ""
-		googleplus = ""
-		flickr = ""
-		linkedin = ""
+[params.info]
+description = "Bustamam Technology"
+title404 = "Nothing's here!"
 
-		copyright = [
-			"&copy; Rasheed Bustamam"
-		]
+[params.assets]
+favicon = "favicon.ico"
+customCSS = ["css/custom.css"]
+customJS = ["js/custom.js"]
+gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
+[params.copyright]
+prefix = ""
+holder = "Rasheed Bustamam"
+startYear = "2018"
+suffix = ""
 
-	[params.about]
-		hide  = false
-		title = "Ipsum lorem dolor aliquam ante commodo magna sed accumsan arcu neque."
-		content = "Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia."
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "02 Jan, 2006"
+listDateFormat = "02 Jan, 2006"
+archiveDateFormat = "Jan 02"
+hideEntryNavigation = ["page"] # boolean / array of sections
+showReadingTime = true
+taxonomyCloudShuffle = true
+accentColor = "#ffcd00"
+hideMainMenu = false
 
+[params.sidebar]
+enable = true
 
-	[params.portfolio]
-		hide  = true
-		title = "Recent Work"
+[params.widgets]
+homepage = ["recent_posts"]
+sidebar = ["about","sidebar_menu","taxonomy_cloud"]
+footer = ["social_menu"]
 
-		# The images and thumbnails are stored under static/images
-		# Create and change subfolders as you like
-		[[params.portfolio.gallery]]
-			image = "fulls/01.jpg"
-			thumb = "thumbs/01.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
 
-		[[params.portfolio.gallery]]
-			image = "fulls/02.jpg"
-			thumb = "thumbs/02.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.opengraph.twitter]
+page = "" # Twitter page username
 
-		[[params.portfolio.gallery]]
-			image = "fulls/03.jpg"
-			thumb = "thumbs/03.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
 
-		[[params.portfolio.gallery]]
-			image = "fulls/04.jpg"
-			thumb = "thumbs/04.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.social]
+codepen = "abustamam"
+# email = "contact@example.com"
+# facebook = "abustamam"
+github = "abustamam"
+gitlab = "abustamam"
+# instagram = "abustamam"
+# linkedin = "abustamam"
+twitter = "rbustamam"
+# telegram = "abustamam"
+# google_scholar = "qc6CJjYAAAAJ"
+# youtube = "UCT-U0rNerYxItGcuoPX-WYA"
 
-		[[params.portfolio.gallery]]
-			image = "fulls/05.jpg"
-			thumb = "thumbs/05.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.comments]
+enable = false
 
-		[[params.portfolio.gallery]]
-			image = "fulls/06.jpg"
-			thumb = "thumbs/06.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
+[params.comments.staticman]
+enable = true
+apiEndpoint = "https://api.staticman.net/v2/entry"
+maxDepth = 2
 
-	[params.recentposts]
-		hide  = false
-		title = "Recent articles"
+[params.comments.staticman.github]
+username = "abustamam"
+repository = "minimo"
+branch = "master"
 
-	[params.contact]
-		hide  = false
-		title = "Get In Touch"
-		content = "Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor."
+[taxonomies]
+# author = "authors"
+category = "categories"
+# series = "series"
+tag = "tags"
 
-		# This can be exact coordinates or a searchable address in google maps
-		# gmaps_address = "39.7889055,-120.5443524"
-		# address = [
-		# 	"1234 Somewhere Rd.",
-		# 	"Nashville, TN 00000",
-		# 	"United States"
-		# ]
-		phone = "000-000-0000"
+[permalinks]
+page = "/:slug/"
 
-		# Since this template is static, the contact form uses www.formspree.io as a
-		# proxy. The form makes a POST request to their servers to send the actual
-		# email. Visitors can send up to a 1000 emails each month for free.
-	    #
-	    # What you need to do for the setup?
-	    #
-	    # - set your email address under 'email' below
-	    # - upload the generated site to your server
-	    # - send a dummy email yourself to confirm your account
-	    # - click the confirm link in the email from www.formspree.io
-	    # - you're done. Happy mailing!
-		email = "hello@example.com"
+# [[menu.main]]
+# name = "Repo"
+# weight = -10
+# identifier = "repository"
+# url = "https://github.com/MunifTanjim/minimo"
 
-		[params.contact.form]
-			# Set custom strings for the form if your native
-			# language isn't English
-			name = "Name"
-			email = "Email"
-			message = "Message"
-			submit = "Send message"
+[blackfriday]
+hrefTargetBlank = true
+
+[languages]
+# edit this block for your own language
+[languages.en]
+lang = "en"
+languageName = "English"
+weight = 1
 
 
-# Menu links that appear on the left sidebar
-[[menu.main]]
-	name = "Home"
-	url  = "/"
-	weight = 1
+### STRATA
 
-[[menu.main]]
-	name = "Blog"
-	url  = "post/"
-	weight = 2
+# baseurl = "/"
+# languageCode = "en-us"
+# title = "Bustamam Technology"
+# theme = "hugo-strata-theme"
+# # disqusShortname = "spf13"
+# # Enable Google Analytics by inserting your tracking code
+# googleAnalytics = ""
+# # Define how many posts should appear on a site
+# paginate = 9
+
+# [params]
+# 	# To provide some metadata for search engines feel free to add a few
+#     # information about you and your website.
+# 	name = "Rasheed Bustamam"
+# 	description = "Cool website"
+
+# 	# Format dates with Go's time formatting
+# 	date_format = "2006-01-02"
+
+# 	# Add read time estimates in the format "X min read"
+# 	show_read_time = false
+
+# 	# Add custom assets with their paths relative to the static folder
+# 	custom_js   = []
+# 	custom_css  = []
+
+
+# 	[params.sidebar]
+# 		# Replace the avatar with a picture of your own under static/images
+# 		avatar = "avatar.jpg"
+# 		# Use Markdown to format the string. This works nearly all over the theme
+# 		bio = "**I'm Rasheed**, a blogger, educator"
+# 		# The icons will be shown if you enter your username
+# 		twitter = "rbustamam"
+# 		github = "abustamam"
+# 		# gitlab = "spf13"
+# 		dribbble = ""
+# 		facebook = ""
+# 		googleplus = ""
+# 		flickr = ""
+# 		linkedin = ""
+
+# 		copyright = [
+# 			"&copy; Rasheed Bustamam"
+# 		]
+
+
+# 	[params.about]
+# 		hide  = false
+# 		title = "Ipsum lorem dolor aliquam ante commodo magna sed accumsan arcu neque."
+# 		content = "Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia."
+
+
+# 	[params.portfolio]
+# 		hide  = true
+# 		title = "Recent Work"
+
+# 		# The images and thumbnails are stored under static/images
+# 		# Create and change subfolders as you like
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/01.jpg"
+# 			thumb = "thumbs/01.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/02.jpg"
+# 			thumb = "thumbs/02.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/03.jpg"
+# 			thumb = "thumbs/03.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/04.jpg"
+# 			thumb = "thumbs/04.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/05.jpg"
+# 			thumb = "thumbs/05.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 		[[params.portfolio.gallery]]
+# 			image = "fulls/06.jpg"
+# 			thumb = "thumbs/06.jpg"
+# 			title = "Lorem ipsum dolor."
+# 			description = "Lorem ipsum dolor sit amet."
+
+# 	[params.recentposts]
+# 		hide  = false
+# 		title = "Recent articles"
+
+# 	[params.contact]
+# 		hide  = false
+# 		title = "Get In Touch"
+# 		content = "Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor."
+
+# 		# This can be exact coordinates or a searchable address in google maps
+# 		# gmaps_address = "39.7889055,-120.5443524"
+# 		# address = [
+# 		# 	"1234 Somewhere Rd.",
+# 		# 	"Nashville, TN 00000",
+# 		# 	"United States"
+# 		# ]
+# 		phone = "000-000-0000"
+
+# 		# Since this template is static, the contact form uses www.formspree.io as a
+# 		# proxy. The form makes a POST request to their servers to send the actual
+# 		# email. Visitors can send up to a 1000 emails each month for free.
+# 	    #
+# 	    # What you need to do for the setup?
+# 	    #
+# 	    # - set your email address under 'email' below
+# 	    # - upload the generated site to your server
+# 	    # - send a dummy email yourself to confirm your account
+# 	    # - click the confirm link in the email from www.formspree.io
+# 	    # - you're done. Happy mailing!
+# 		email = "hello@example.com"
+
+# 		[params.contact.form]
+# 			# Set custom strings for the form if your native
+# 			# language isn't English
+# 			name = "Name"
+# 			email = "Email"
+# 			message = "Message"
+# 			submit = "Send message"
+
+
+# # Menu links that appear on the left sidebar
+# [[menu.main]]
+# 	name = "Home"
+# 	url  = "/"
+# 	weight = 1
+
+# [[menu.main]]
+# 	name = "Blog"
+# 	url  = "post/"
+# 	weight = 2
