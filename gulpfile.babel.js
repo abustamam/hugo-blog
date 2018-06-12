@@ -20,6 +20,8 @@ const hugoBin = `/usr/local/bin/hugo`
 // const hugoBin = `./bin/hugo`
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
+cp.spawn(hugoBin, ["version"], { stdio: "inherit" })
+
 if (process.env.DEBUG) {
   defaultArgs.unshift("--debug")
 }
