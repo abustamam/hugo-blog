@@ -12,10 +12,16 @@ import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import cssnano from "cssnano";
 
+
 const browserSync = BrowserSync.create();
-// const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
+const hugoBin1 = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
 const hugoBin = `/usr/local/bin/hugo`
+const hugo = 'hugo'
+// const hugoBin = `./bin/hugo`
 const defaultArgs = ["-d", "../dist", "-s", "site"];
+
+console.log("-----PLATFORM!!!", process.platform, hugoBin, hugoBin1)
+cp.spawn(hugo, ["version"], { stdio: "inherit" })
 
 if (process.env.DEBUG) {
   defaultArgs.unshift("--debug")
@@ -87,7 +93,7 @@ gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
 
-  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
+  return cp.spawn(hugo, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload("notify:false");
       cb();
